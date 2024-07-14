@@ -2,8 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Animals from './components/Animals'
-import Colors from './components/Colors'
+import Animals from './components/basics/Animals'
+import Colors from './components/basics/Colors'
+import TicTacToe from './components/basics/TicTacToe'
+import Person from './components/basics/Person'
+import Dashboard from './components/dashboard/Dashboard'
 
 function Button(props) {
   const styles = {
@@ -20,6 +23,8 @@ function App() {
 
   return (
     <>
+      <Dashboard></Dashboard>
+      <Person></Person>
       <Animals />
       <div>
         <Colors />
@@ -34,6 +39,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>
+        <TicTacToe></TicTacToe>
+      </div>
     </>
   )
 }
