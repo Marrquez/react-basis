@@ -1,12 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
-import Animals from './components/basics/Animals'
-import Colors from './components/basics/Colors'
 import TicTacToe from './components/basics/TicTacToe'
 import Person from './components/basics/Person'
-import Dashboard from './components/dashboard/Dashboard'
+import Product from './components/dashboard/Product'
 
 function Button(props) {
   const styles = {
@@ -18,18 +14,25 @@ function Button(props) {
 
 function App() {
   const [count, setCount] = useState(0);
+  const [counter, setCounter] = useState(0);
+  const [form, setForm] = useState(null);
 
   const onHandleClick = () => setCount((count) => count + 1);
 
+  useEffect(() => {
+    // const key = setInterval(() => {
+    //   setCounter(count => count + 1)
+    // }, 1000);
+ 
+    // return () => {
+    //   clearInterval(key);
+    // };
+  }, [])
+
   return (
     <>
-      <Dashboard></Dashboard>
       <Person></Person>
-      <Animals />
-      <div>
-        <Colors />
-      </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React: {counter}</h1>
       <div className="card">
         <Button handleClick={onHandleClick} text={'Count is ' + count} color='purple' fontSize={18} />
         <p>
@@ -41,6 +44,10 @@ function App() {
       </p>
       <div>
         <TicTacToe></TicTacToe>
+      </div>
+      <div>
+        The form: {form}
+        <Product></Product>
       </div>
     </>
   )

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "../basics/Input";
+import { Outlet } from "react-router-dom";
 
 function ProductCategory({category}) {
     return (
@@ -102,15 +103,20 @@ function FilterableProductTable({products}) {
 
     return (
         <div>
-            <SearchBar 
-                filterText={filterText} 
-                inStockOnly={inStockOnly}
-                onFilterTextChange={setFilterText}
-                onInStockOnlyChange={setInStockOnly}></SearchBar>
-            <ProductTable 
-                products={products}
-                filterText={filterText} 
-                inStockOnly={inStockOnly}></ProductTable>
+            <div>
+                <SearchBar 
+                    filterText={filterText} 
+                    inStockOnly={inStockOnly}
+                    onFilterTextChange={setFilterText}
+                    onInStockOnlyChange={setInStockOnly}></SearchBar>
+                <ProductTable 
+                    products={products}
+                    filterText={filterText} 
+                    inStockOnly={inStockOnly}></ProductTable>
+            </div>
+            <div>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 }

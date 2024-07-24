@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar component > renders magnificent monkeys 1`] = `
+<div>
+  <h1>
+    Hello world from Navbar
+  </h1>
+  <button
+    type="button"
+  >
+    Click Me
+  </button>
+  <p>
+    Magnificent Monkeys
+  </p>
+</div>
+`;

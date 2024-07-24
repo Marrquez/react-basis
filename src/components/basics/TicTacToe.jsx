@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function Square(props) {
     return <button 
@@ -90,6 +91,9 @@ function Game() {
 
     return (
         <div className='game'>
+            <div>
+                <Link to="login">Go to login</Link>
+            </div>
             <div className='game-board'>
                 <Board xIsNext={xIsNext} squares={currentState} onPlay={updateHistory} />
             </div>
